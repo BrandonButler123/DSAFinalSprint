@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Result</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+    </style>
+    <script>
+        function formatJSON(json) {
+            try {
+                return JSON.stringify(JSON.parse(json), null, 2);
+            } catch (e) {
+                return json;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var json = document.getElementById("tree-json").textContent;
+            document.getElementById("tree-json").textContent = formatJSON(json);
+        });
+    </script>
+</head>
+<body>
+<h1>Tree Result</h1>
+<pre id="tree-json">${tree}</pre>
+<a href="/enter-numbers">Enter New Numbers</a>
+<a href="/previous-trees">View Previous Trees</a>
+</body>
+</html>

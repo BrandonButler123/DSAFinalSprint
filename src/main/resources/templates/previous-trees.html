@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previous Trees</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<h1>Previous Trees</h1>
+<ul>
+    <th:block th:each="tree : ${trees}">
+        <li>
+            <span th:text="${tree.id}"></span>:
+            <a th:href="@{/trees/{id}(id=${tree.id})}" th:text="'View Tree ' + ${tree.id}"></a>
+        </li>
+    </th:block>
+</ul>
+<a href="/enter-numbers">Enter New Numbers</a>
+</body>
+</html>
+
+
